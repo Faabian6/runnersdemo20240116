@@ -75,6 +75,21 @@ public class RunnerRestController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Runner with ID " + id + " not found");
         }
     }
+    @GetMapping("/averagepace")
+    public double getAveragePace() {
+        List<RunnerEntity> runnerList = runnerRepository.findAll();
+        if (!runnerList.isEmpty()) {
+            int totalPace = 0;
+            int counter = 0;
+            for(int i = 0; i < runnerList.size(); i++){
+                totalPace += runnerList.get(i).getPace();
+                counter++;
+            }
+            return (double) totalPace / counter;
+        } else {
+            return -1.00;
+        }
+    }
     public static class LapTimeRequest {
         private int lapTimeSeconds;
 
