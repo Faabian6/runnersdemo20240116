@@ -158,6 +158,38 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "setShoe",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"shoeId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/runner/1/setshoe",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"runner",
+						"1",
+						"setshoe"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
